@@ -9,8 +9,11 @@ import Brand from '@/components/views/Brand.vue'
 import Event from '@/components/views/Event.vue'
 import Goevent from '@/components/views/Goevent.vue'
 
+import Cart from '@/components/views/Cart.vue'
 import Liked from '@/components/views/Liked.vue'
 import Login from '@/components/views/Login.vue'
+
+import NotFound from '@/components/views/NotFound.vue'
 
 
 
@@ -40,11 +43,17 @@ const routes = [
   { path: '/goevent', // 실제 이벤트 페이지
       component: Goevent,
   },
-  { path: '/liked', // 찜목록 페이지
+  { path: '/liked', // 찜 목록 페이지
       component: Liked 
+  },
+  { path: '/cart', // 장바구니 페이지
+      component: Cart 
   },
   { path: '/login', // 로그인 페이지
       component: Login,
+  },
+    { path: '/not_found', // 404 페이지
+      component: NotFound,
   },
 ];
 

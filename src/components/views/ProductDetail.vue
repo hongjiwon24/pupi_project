@@ -48,9 +48,12 @@
       <hr />
     </div>
 
-  <div v-if="product" class="product-info wrap">
-    <h2>제품 상세 이미지</h2>
+  <div v-if="product" class="product-info wrap flex-column-center">
+    <h2 >제품 상세 이미지</h2>
     <img src="@/assets/img/dsc_img1.png" alt="">
+    <p>※본 제품은 베이비 애니멀 인형중 3개가 랜덤으로 발송됩니다.</p>
+    <img src="@/assets/img/b_animal.png" alt="">
+    <p>알러지, 진드기 걱정 없는 순면 100%로 제작되어 안심하고 사용할 수 있습니다.</p>
   </div>
 
   <div v-else class="not-found wrap">
@@ -216,9 +219,19 @@ hr {
 
 /* ❤️ 제품 상세 정보 */
 .product-info {
-  
+  margin: 230px auto;
+  gap: 70px;
 }
-
+.product-info h2 {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 19px;
+}
+.product-info img {
+  width: 608px;
+  height: 388px;
+  object-fit: cover;
+}
 
 /* ❤️ 찜 버튼 */
 .like-btn-p {

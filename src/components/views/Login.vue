@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
-    <div class="login-box">
-      <h2 class="login-title">WELCOME</h2>
+    <div class="login-box flex-column">
+      <h2 class="login-title">LOGIN</h2>
       <form @submit.prevent="handleLogin">
         <div class="form-group">
           <!-- <label for="username">아이디를 입력하세요</label> -->
@@ -25,10 +25,10 @@
           />
         </div>
 
-        <button type="submit" class="login-button">로그인</button>
+        <button type="submit" class="login-button">Login</button>
 
         <div class="signup-link">
-          아직 아이디가 없으시다면?
+          아직 아이디가 없으신가요?
           <router-link to="/signup" class="link">회원가입</router-link>
         </div>
       </form>
@@ -54,28 +54,34 @@ const handleLogin = () => {
 .login-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 30px;
   min-height: 700px;
   margin-bottom: 90px;
-  margin-top: 70px;
+  margin-top: 50px;
 }
 .login-box {
   width: 100%;
   max-width: 400px;
-  padding: 2rem;
+  padding: 50px 43px;
   background-color: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 1px solid #939393;
+  align-items: center;
+  gap: 24px;
+}
+.login-box form {
+  width: 85%;
 }
 
 .login-title {
   text-align: center;
-  font-size: 24px;
+  font-size: 35px;
   font-weight: bold;
   color: #FF8181;
-  margin-bottom: 1.5rem;
+  margin-bottom: 18px;
 }
 
 .form-group {
@@ -102,6 +108,12 @@ const handleLogin = () => {
 
 .form-group input:focus {
   border-color: #3b82f6;
+}
+
+input::placeholder { /* 아이디, 비밀번호 입력칸  */
+  color: #AFAFAF;
+  font-weight: bold;
+  padding-left: 20px;
 }
 
 .login-button {

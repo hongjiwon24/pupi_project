@@ -25,7 +25,7 @@
           <h2 class="h2">{{ section.title }}</h2>
           <img :src="section.image" :alt="section.alt" />
           <p class="p" v-html="section.description"></p>
-          <router-link :to="section.link" class="btn">더보기</router-link>
+          <router-link :to="section.link" class="btn">{{ section.buttonText }}</router-link>
           <ul class="flex">
             <li v-for="item in section.bannerItems" :key="item.alt">
               <router-link :to="item.link">
@@ -68,10 +68,11 @@ const sections = [
     alt: "베이비 애니멀 이미지",
     description: `베이비 애니멀과의 교감을 통해 우리 아이가 <br> 동물 친구들과 편안한 애착을 가질 수 있도록 해주세요. <br> 베이비 애니멀은 알러지 케어가 되는 순면 100%로 만들어졌습니다.`,
     link: "/baby_animal",
+    buttonText: "베이비 애니멀 더보기",
     bannerItems: [
-        { image: elpnt, alt: "코끼리", link: "/event" },
-        { image: cat_w, alt: "고양이", link: "/event" },
-        { image: dog_w, alt: "강아지", link: "/event" }
+        { image: elpnt, alt: "코끼리", link: "/product/animal001" },
+        { image: cat_w, alt: "고양이", link: "/product/animal002" },
+        { image: dog_w, alt: "강아지", link: "/product/animal003" }
     ]
   },
   {
@@ -80,10 +81,11 @@ const sections = [
     alt: "베이비 푸드 이미지",
     description: `베이비 푸드의 교감을 통해 우리 아이가 <br> 음식 친구들과 편안한 애착을 가질 수 있도록 해주세요. <br> 베이비 푸드는 알러지 케어가 되는 순면 100%로 만들어졌습니다.`,
     link: "/baby_food",
+    buttonText: "베이비 푸드 더보기",
     bannerItems: [
-        { image: corn, alt: "옥수수", link: "/event" },
-        { image: peach, alt: "복숭아", link: "/event" },
-        { image: potato, alt: "감자", link: "/event" }
+        { image: corn, alt: "옥수수", link: "/product/food001" },
+        { image: peach, alt: "복숭아", link: "/product/food003" },
+        { image: potato, alt: "감자", link: "/product/food004" }
     ]
   }
 ]

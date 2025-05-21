@@ -4,6 +4,7 @@ import path from 'path' // ⬅️ path 모듈 꼭 import!
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/pupi/',
   plugins: [vue()],
   resolve: {
     alias: {

@@ -8,12 +8,12 @@
                 <li><router-link to="/baby_animal">Baby Animal</router-link></li>
                 <li><router-link to="/baby_food">Baby Food</router-link></li>
                 <!-- <li><router-link to="">Art Print</router-link></li> -->
-                <li><router-link to="/brand">Brand</router-link></li>
+                <li><router-link to="/not_found">Brand</router-link></li>
                 <li><router-link to="/goevent">Event</router-link></li>
             </ul>
             <div class="nav-links">
                 <router-link to="/liked" class="nav-item liked">좋아요</router-link>
-                <router-link to="/liked" class="nav-item cart">장바구니</router-link>
+                <router-link to="/not_found" class="nav-item cart">장바구니</router-link>
                 <router-link to="/login" class="nav-item login">로그인</router-link>
             </div>
         </nav>

@@ -1,7 +1,7 @@
 <template>
   <div class="event-container flex">
     <h1>🎉행운의 카드 뒤집기 이벤트🎊</h1>
-    <p>카드 하나를 골라서 뒤집어 보세요!</p>
+    <p>카드를 한장 뒤집어주세요!</p>
     <div class="cards">
       <FlipCard
         v-for="(prize, index) in shuffledPrizes"
@@ -42,13 +42,12 @@ const flipped = ref(false)
 <style scoped>
 .event-container {
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100vh;
   text-align: center;
-  padding: 2rem; /* 일단 스크롤 때문에 화면 움직여서 냅둠*/
+  padding: 2rem;
   font-family: sans-serif;
-  overflow: hidden; /* 스크롤 방지 */
+  margin-top: 120px;
 }
 .event-container h1 {
   font-size: 27px;

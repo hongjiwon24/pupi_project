@@ -11,7 +11,7 @@
             <p class="p" >내 아이가 처음 만나는 인형, 그래서 더 신중하게 고른 Pupi. <br>촉감 하나, 색감 하나도 부드럽고 안전하게. 마음 놓고 안길 수 있게. <br>
                 아기에게 첫 친구가 되어줄 따뜻한 인형을, 엄마의 마음으로 담았어요.</p>
             <img src="@/assets/img/brand.png" alt="섹션 이미지">
-            <router-link to="/brand" class="btn">브랜드 소개 더보기</router-link>
+            <router-link to="/not_found" class="btn">브랜드 소개 더보기</router-link>
         </div>   
     </section>
   

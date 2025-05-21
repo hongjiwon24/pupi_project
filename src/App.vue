@@ -17,7 +17,7 @@ import '@/assets/style.css'
 
 const route = useRoute()
 
-const fullScreenRoutes = ['/all', '/baby_animal', '/baby_food', '/brand', '/event', '/goevent', '/liked', '/login']  // 단독으로 보여줄 경로
+const fullScreenRoutes = ['/all', '/baby_animal', '/baby_food', '/brand', '/event', '/goevent', '/liked', '/cart', '/login', '/not_found']  // 단독으로 보여줄 경로
 // ⭐️ 경로를 computed로!
 const routePath = computed(() => route.path)
 

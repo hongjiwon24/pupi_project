@@ -12,4 +12,18 @@
   justify-content: center;
   align-items: center;
 }
+.goevent a {
+  width: 187px;
+  height: 53px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 27px;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  background-color: #FF7272;
+  color: white !important;
+}
 </style>

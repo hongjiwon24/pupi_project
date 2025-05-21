@@ -20,7 +20,7 @@
                 <p>Baby Food</p>
             </li>
             <li>
-                <router-link to="/brand">
+                <router-link to="/not_found">
                 <img src="@/assets/img/bear_bg.png" alt="브랜드">
                 </router-link>
                 <p>Brand</p>

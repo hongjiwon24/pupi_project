@@ -4,13 +4,18 @@
       <div class="popup-content">
         <button class="close-btn" @click="closePopup">×</button>
         <h2><strong>랜덤 카드 뽑기 이벤트</strong></h2>
-        <p>카드를 뒤집고 상품 받아가세요! 다양한 경품들이 쏟아져요!</p>
-        <button class="event-btn"><router-link to="/goevent">이벤트 보러가기</router-link></button>
-        <button class="disable-popup-btn" @click="disableTodayPopup">오늘 하루 열지 않기 X</button>
+        <p>이벤트 참여하고 상품을 받아가세요 <br>다양한 경품들이 무료로 쏟아져요!</p>
+        <img src="@/assets/svg/card/random_card.svg" alt="랜덤 카드 이미지" class="random-card">
+
+        <!-- router-link를 button처럼 -->
+        <router-link to="/goevent" class="event-btn">이벤트 보러가기</router-link>
+
+        <button class="disable-popup-btn" @click="disableTodayPopup">오늘 하루 열지 않기 ×</button>
       </div>
     </div>
   </transition>
 </template>
+
 
 <!-- 로컬스토리지에 저장된 팝업 기록 삭제 -->
 <!-- localStorage.removeItem('popupClosed'); -->
@@ -56,6 +61,19 @@ const disableTodayPopup = () => {
 
 
 <style scoped>
+.random-card { /* 카드 이미지 */
+  width: 105px;
+  margin: 30px;
+}
+.popup-content h2 { /* 랜덤 카드 뽑기 이벤트 */
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.popup-content p { /* 카드를 뒤집고 상품 받아가세요! */
+  font-size: 15px;
+  color: #818181;
+}
+
 .popup-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -68,7 +86,7 @@ const disableTodayPopup = () => {
 
 .popup-content {
   background: white;
-  padding: 20px;
+  padding: 32px 25px;
   border-radius: 12px;
   min-width: 300px;
   max-width: 500px;
@@ -90,8 +108,9 @@ const disableTodayPopup = () => {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+/* 이벤트 보러가기 */
 .event-btn {
-  margin-top: 20px;
   padding: 10px 20px;
   background-color: #ff6b6b;
   border: none;
@@ -99,10 +118,14 @@ const disableTodayPopup = () => {
   cursor: pointer;
   font-weight: bold;
   width: 154px;
-}
-.event-btn a {
   color: white !important;
 }
+
+.event-btn:hover {
+  background-color: #e64b4b;
+}
+
+/* 오늘 하루 열지 않기 */ 
 .disable-popup-btn {
   border: none;
   cursor: pointer;
@@ -113,8 +136,5 @@ const disableTodayPopup = () => {
   bottom: 22px;
 }
 
-.event-btn:hover {
-  background-color: #e64b4b;
-}
 
 </style>

@@ -1,7 +1,7 @@
 <!-- Liked.vue -->
 <template>
   <div class="like wrap flex-column-center">
-    <h2 class="h2">찜한 상품</h2>
+    <h2>찜한 상품</h2>
     <ul class="product-list">
       <li v-for="(item, index) in likedProducts" :key="item.name">
         <router-link :to="item.link">
@@ -42,6 +42,7 @@ function toggleLikeById(id) {
 .like h2 {
   text-align: center;
   font-size: 24px;
+  font-weight: bold;
   margin-bottom: 30px;
 }
 
