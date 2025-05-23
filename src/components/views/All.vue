@@ -1,38 +1,33 @@
 <!-- 모든 제품 페이지 -->
 
 <template>
-    <div class="Blank"></div>
-    <div class="all wrap flex-column-center">
+  <div class="all wrap flex-column-center">
     <h2 class="h2">Product</h2>
     <ul class="product-list">
-        <li v-for="(item, index) in visibleProducts" :key="item.name">
-          <router-link :to="`/product/${item.id}`">
-              <img :src="item.image" :alt="item.name" class="product-card" />
-              <p>{{ item.name }}<strong><br>{{ item.price.toLocaleString() }}원</strong></p>
-          </router-link>
-          <button class="like-btn" @click="toggleLikeById(item.id)">
-            <span :class="['heart', item.liked ? 'on' : '']">
-              {{ item.liked ? '❤️' : '🤍' }}
-            </span>
-          </button>
-        </li>
+      <li v-for="item in visibleProducts" :key="item.id">
+        <router-link :to="`/product/${item.id}`">
+          <img :src="item.image" :alt="item.name" class="product-card"/>
+          <p>{{ item.name }}<br><strong>{{ item.price.toLocaleString() }}원</strong></p>
+        </router-link>
+        <button class="like-btn" @click="toggleLike(item.id)">
+          <span :class="['heart', item.liked ? 'on' : '']">
+            {{ item.liked ? '❤️' : '🤍' }}
+          </span>
+        </button>
+      </li>
     </ul>
-    <!-- ✅ 더보기 버튼 추가 -->
-    <More_btn
-    :show="visibleProducts.length < products.length"
-    @click="showMore"
-    />
-    </div>
+    <More_btn :show="visibleProducts.length < products.length" @click="showMore" />
+  </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
-import { useProducts, allProducts } from '@/composables/useProducts'
+import { useProducts } from '@/composables/useProducts'
 import More_btn from '@/components/common/More_btn.vue'
 
 const { products, toggleLike } = useProducts()
 
-// 더보기 기능을 위한 상태 관리
+// 더보기 기능
 const perPage = 10
 const visibleCount = ref(perPage)
 
@@ -43,14 +38,8 @@ const visibleProducts = computed(() =>
 const showMore = () => {
   visibleCount.value += perPage
 }
-
-// id 기준으로 좋아요 토글
-function toggleLikeById(id) {
-  const idx = products.value.findIndex(p => p.id === id)
-  if (idx !== -1) toggleLike(idx)
-}
-
 </script>
+
 
 
 <style scoped>

@@ -9,7 +9,7 @@
           <img :src="item.image" :alt="item.name" class="product-card" />
           <p>{{ item.name }}<strong><br>{{ item.price.toLocaleString() }}원</strong></p>
         </router-link>
-        <button class="like-btn" @click="toggleLikeById(item.id)">
+        <button class="like-btn" @click="toggleLike(item.id)">
           <span :class="['heart', item.liked ? 'on' : '']">
             {{ item.liked ? '❤️' : '🤍' }}
           </span>
@@ -41,10 +41,6 @@ const visibleProducts = computed(() =>
 )
 const showMore = () => {
   visibleCount.value += perPage
-}
-function toggleLikeById(id) {
-  const idx = products.value.findIndex(p => p.id === id)
-  if (idx !== -1) toggleLike(idx)
 }
 </script>
 

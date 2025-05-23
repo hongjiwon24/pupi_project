@@ -21,13 +21,13 @@
         <p class="total">총 상품 금액 <strong>{{ total.toLocaleString() }}원</strong></p>
 
         <div class="action-buttons">
-        <button class="buy-now buy-btn">바로 구매하기</button>
-        <button class="buy-cart shop-btn">장바구니에 담기</button>
-        <button class="like-btn-p" @click="toggleLikeById(product.id)">
-          <span :class="['heart', product.liked ? 'on' : '']">
-            {{ product.liked ? '❤️' : '🤍' }}
-          </span>
-        </button>
+          <button class="buy-now buy-btn">바로 구매하기</button>
+          <button class="buy-cart shop-btn">장바구니에 담기</button>
+          <button class="like-btn-p" @click="toggleLike(productId)">
+            <span :class="['heart', product.liked ? 'on' : '']">
+              {{ product.liked ? '❤️' : '🤍' }}
+            </span>
+          </button>
         </div>
 
       </div>
@@ -64,50 +64,43 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { useProducts } from '@/composables/useProducts'
-import { computed, ref } from 'vue'
-
+import { computed, ref, watchEffect } from 'vue'
 
 const route = useRoute()
 const productId = route.params.id
 
-const { products, toggleLike } = useProducts() // 꼭 있어야 함
+const { products, toggleLike } = useProducts()
 
+// 상품 정보 가져오기
+const product = ref(null)
 
-// 해당 상품
-const product = computed(() =>
-  products.value.find(p => p.id === productId)
-)
+watchEffect(() => {
+  if (products.value && productId) {
+    product.value = products.value.find(p => p.id === productId)
+  }
+})
 
-// 연관 상품 (같은 카테고리, 본인 제외)
+// 연관 상품
 const related = computed(() =>
   products.value.filter(p => p.category === product.value?.category && p.id !== productId).slice(0, 5)
 )
 
-
-// 수량 증가/감소를 위한 quantity 상태와 함수
+// 수량 및 합계
 const quantity = ref(1)
-
-const increase = () => {
-  quantity.value++
-}
-const decrease = () => {
-  if (quantity.value > 1) quantity.value--
-}
-
-// 총 상품 금액 계산 (배송비 포함)
+const increase = () => quantity.value++
+const decrease = () => { if (quantity.value > 1) quantity.value-- }
 const shippingFee = 2500
 const total = computed(() =>
   product.value ? product.value.price * quantity.value + shippingFee : 0
 )
 
-
-
-// id 기준으로 좋아요 토글
+// 좋아요 토글
 function toggleLikeById(id) {
   const idx = products.value.findIndex(p => p.id === id)
   if (idx !== -1) toggleLike(idx)
 }
 </script>
+
 
 
 <style scoped>

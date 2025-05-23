@@ -119,6 +119,7 @@ const disableTodayPopup = () => {
   font-weight: bold;
   width: 154px;
   color: white !important;
+  margin-bottom: 15px;
 }
 
 .event-btn:hover {
@@ -134,6 +135,7 @@ const disableTodayPopup = () => {
   position: absolute;
   right: 22px;
   bottom: 22px;
+  color: #686868;
 }
 
 

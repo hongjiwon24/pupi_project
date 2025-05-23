@@ -3,12 +3,12 @@
   <div class="like wrap flex-column-center">
     <h2>찜한 상품</h2>
     <ul class="product-list">
-      <li v-for="(item, index) in likedProducts" :key="item.name">
+      <li v-for="item in likedProducts" :key="item.id">
         <router-link :to="item.link">
           <img :src="item.image" :alt="item.name" />
-          <p>{{ item.name }}<strong><br>{{ item.price.toLocaleString() }}원</strong></p>
+          <p>{{ item.name }}<br><strong>{{ item.price.toLocaleString() }}원</strong></p>
         </router-link>
-        <button class="like-btn" @click="toggleLikeById(item.id)">
+        <button class="like-btn" @click="toggleLike(item.id)">
           <span :class="['heart', item.liked ? 'on' : '']">
             {{ item.liked ? '❤️' : '🤍' }}
           </span>
@@ -21,12 +21,7 @@
 <script setup>
 import { useProducts } from '@/composables/useProducts'
 
-const { products, likedProducts, toggleLike } = useProducts()
-
-function toggleLikeById(id) {
-  const idx = products.value.findIndex(p => p.id === id)
-  if (idx !== -1) toggleLike(idx)
-}
+const { likedProducts, toggleLike } = useProducts()
 </script>
 
 
