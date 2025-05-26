@@ -4,6 +4,13 @@
   height: auto;
 } */
 
+@font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* 구글폰트 */
 body{
   font-family: "Noto Sans KR", sans-serif;
@@ -55,16 +62,20 @@ nav a {
 
 /* 텍스트 스타일링 */
 .h1{
-  font-size: 42px;
+  font-size: 46px;
   font-weight: bold;
 }
 .h2{
+  font-size: 37px;
+  font-weight: 900;
+  margin-bottom: 24px;
+  color: #d1707a;
+}
+.h3{
   font-size: 30px;
   font-weight: 900;
   margin-bottom: 24px;
-}
-.h3{
-  font-size: 35px;
+  color: #2f2929;
 }
 .h4{
   font-size: 25px;
@@ -84,6 +95,7 @@ nav a {
 }
 .p{
   font-size: 17px;
+  color: #2f2929;
 }
 .m{
   font-size: 16px;
@@ -107,7 +119,7 @@ nav a {
   color: black !important;
 }
 .charcoal {
-  color: #3A3A3A;
+  color: #2f2929 !important;
 }
 
 
@@ -116,8 +128,8 @@ nav a {
   /* font-size: 14px; */
   width: 189px;
   height: 53px;
-  border: 1px solid #C4B296;
-  color: #9c8357 !important;
+  border: 1px solid #D18686;
+  color: #D18686 !important;
   border-radius: 21px;
   display: flex;
   justify-content: center;
@@ -127,7 +139,8 @@ nav a {
 }
 .btn:hover {
   /* background-color: #C4B296; */
-  color: #a38e6b !important;
+  border: 1px solid #c55858;
+  color: #c55858 !important;
 }
 /* .btn::after {
   content: "+";
@@ -164,7 +177,7 @@ nav a {
   align-items: center;
   /* background-color: rgba(255, 255, 255, 0.5); */
   background-color: white;
-  border: 1px solid #939393;
+  border: 1px solid #998888;
   border-radius: 5px;
   box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
 }
@@ -213,6 +226,7 @@ nav a {
 .shop-btn {
   border: 1px solid #939393;
   background-color: white;
+  color: #2f2929;
 }
 .shop-btn:hover {
   background-color: #f5f5f5;

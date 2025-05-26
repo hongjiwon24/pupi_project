@@ -131,6 +131,7 @@ function toggleLikeById(id) {
     font-size: 24px;
     font-weight: bold;
     padding-bottom: 19px;
+    color: #2f2929;
 }
 .product-meta .description {
   padding-bottom: 15px;
@@ -153,6 +154,8 @@ function toggleLikeById(id) {
 /* 판매가 */
 .price {
   font-weight: bold;
+  color: #2f2929;
+  word-spacing: 24px;
 }
 /* 주문 수량 */
 .quantity {
@@ -160,11 +163,13 @@ function toggleLikeById(id) {
   align-items: center;
   font-size: 15px;
   font-weight: bold;
+  color: #2f2929;
 }
 .counter {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-left: 15px;
 }
 .counter button {
   width: 32px;
@@ -179,6 +184,7 @@ function toggleLikeById(id) {
   width: 40px;
   text-align: center;
   font-weight: bold;
+  color: #2f2929;
 }
 
 /* 배송 구분 */
@@ -190,6 +196,7 @@ function toggleLikeById(id) {
 .total {
   font-size: 16px;
   font-weight: bold;
+  color: #2f2929;
   text-align: end;
   padding-bottom: 20px;
 }
@@ -224,6 +231,11 @@ hr {
   width: 608px;
   height: 388px;
   object-fit: cover;
+}
+
+/* 이 제품과 함께 본 상품 */
+.related p {
+  color: #2f2929;
 }
 
 /* ❤️ 찜 버튼 */

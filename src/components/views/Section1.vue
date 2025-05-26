@@ -9,19 +9,21 @@
     class="baby-swiper"
   >
     <SwiperSlide v-for="(section, index) in sections" :key="index">
-      <section class="section drag-zone"
-            @mouseenter="isDragging = true"
-            @mouseleave="isDragging = false"
-            @mousemove="updateMouse">
-        <!-- Drag 커서 -->
-        <div
-        v-if="isDragging && !isInteractive"
-        class="drag-cursor"
-        :style="cursorStyle"
-        >
-        좌우로 드래그 해보세요
-        </div>
-        <div class="section1 wrap flex">
+      <section class="section drag-zone">
+        <div class="section1 wrap flex"
+             @mouseenter="isDragging = true"
+             @mouseleave="isDragging = false"
+             @mousemove="updateMouse">
+          
+          <!-- ✅ Drag 커서 위치 이동 -->
+          <div
+            v-if="isDragging && !isInteractive"
+            class="drag-cursor"
+            :style="cursorStyle"
+          >
+            좌우로 드래그 해보세요
+          </div>
+
           <h2 class="h2">{{ section.title }}</h2>
           <img :src="section.image" :alt="section.alt" />
           <p class="p" v-html="section.description"></p>
@@ -38,6 +40,7 @@
     </SwiperSlide>
   </Swiper>
 </template>
+
 
 
 <script setup>
@@ -136,6 +139,7 @@ const cursorStyle = computed(() => ({
 .section1 h2 {
     grid-column: 1 / span 2;
     grid-row: 1;
+    color: #d1707a;
 }
 .section1 > img {
     grid-column: 1;
@@ -215,7 +219,7 @@ const cursorStyle = computed(() => ({
 /* 스와이프 버튼 */
 .swiper-button-prev,
 .swiper-button-next {
-  color: #ff7f50;
+  color: #E07C86;
   z-index: 10;
 }
 
@@ -245,7 +249,7 @@ const cursorStyle = computed(() => ({
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #ff7f50;
+  background-color: #E07C86;
 }
 
 /* Drag 커서 스타일 - PC에서만 작동 */

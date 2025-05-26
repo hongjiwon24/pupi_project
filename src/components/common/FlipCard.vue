@@ -58,8 +58,8 @@ onMounted(() => {
 
 <style scoped>
 .card {
-  width: 184px;
-  height: 250px;
+  width: 175px;
+  height: 237px;
   perspective: 1000px;
   cursor: pointer;
   transition: 0.17s ease-out;

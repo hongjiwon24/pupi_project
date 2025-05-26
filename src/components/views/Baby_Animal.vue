@@ -2,7 +2,7 @@
 
 <template>
   <div class="baby_animal wrap flex-column-center">
-    <h2 class="h2">Baby Animal</h2>
+    <h2 class="h3">Baby Animal</h2>
     <ul class="product-list">
       <li v-for="item in visibleProducts" :key="item.id">
         <router-link :to="`/product/${item.id}`">
@@ -46,7 +46,6 @@ const showMore = () => {
 <style scoped>
 .baby_animal {
   min-height: 700px;
-  margin-bottom: 90px;
   margin-top: 70px;
 }
 .baby_animal h2 {

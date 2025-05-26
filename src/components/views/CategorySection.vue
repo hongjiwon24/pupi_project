@@ -58,8 +58,9 @@
     background-color: white;
     border-radius: 50%;
 }
-.Category ul li  p {
+.Category ul li p {
     font-weight: 690;
+    color: #2f2929 !important;
 }
 
 /* 흰색 박스 */

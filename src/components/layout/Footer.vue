@@ -17,8 +17,12 @@
                 </li>
             </ul>
             <div class="call flex charcoal">
-                <h2 class="menu"><strong>문의 전화</strong></h2>
-                <p>1577-0000</p>
+                <h2 class="menu"><strong>상담 문의</strong></h2>
+                <ul class="flex">
+                    <li><a href="">인스타그램</a></li>
+                    <li><a href="">카카오톡</a></li>
+                    <li><a href="">카카오톡</a></li>
+                </ul>
                 <p class="m"><strong>상담시간: 평일 9:00~17:00</strong>｜점심시간: 12:00~13:00 <br>토 / 일 / 공휴일 휴무</p>
             </div>
         </div>
@@ -43,6 +47,7 @@ footer .infor h1 {
     grid-row: 2;
     align-self: end;
     color: #E07C86;
+    font-family: 'KCC-Ganpan';
 }
 footer .infor > p {
     grid-column: 1;
@@ -81,12 +86,12 @@ footer .call {
 footer .call h2 {
 
 }
-footer .call p:nth-of-type(1) {
+/* footer .call p:nth-of-type(1) {
     font-size: 37px;
     font-weight: bold;
     color: #E07C86;
     margin-bottom: 30px;
-}
+} */
 footer .call p:nth-of-type(2) {
 
 }

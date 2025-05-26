@@ -1,8 +1,9 @@
 <!-- 모든 제품 페이지 -->
 
 <template>
+  <div></div>
   <div class="all wrap flex-column-center">
-    <h2 class="h2">Product</h2>
+    <h2 class="h3">Product</h2>
     <ul class="product-list">
       <li v-for="item in visibleProducts" :key="item.id">
         <router-link :to="`/product/${item.id}`">
@@ -46,7 +47,6 @@ const showMore = () => {
 
 .all {
   min-height: 700px;
-  margin-bottom: 90px;
   margin-top: 70px;
 }
 .all h2 {

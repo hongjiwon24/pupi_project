@@ -1,7 +1,7 @@
 <!-- Cart.vue -->
 <template>
   <div class="cart wrap flex-column">
-    <h2>장바구니</h2>
+    <h2 class="h3">장바구니</h2>
   </div>
 </template>
 

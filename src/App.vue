@@ -13,7 +13,7 @@ import Footer from '@/components/layout/Footer.vue'
 import Aside from '@/components/layout/Aside.vue'
 
 import '@/assets/reset.css'
-import '@/assets/style.css'
+import '@/assets/main.css'
 
 const route = useRoute()
 
@@ -40,7 +40,9 @@ const isFullScreen = computed(() =>
     <!-- <transition name="fade" mode="out-in">
       <router-view />
     </transition> -->
-    <router-view />
+    <div class="page-content">
+      <router-view />
+    </div>
 
     <Footer />
     <Aside />
@@ -49,12 +51,15 @@ const isFullScreen = computed(() =>
   <!-- 일반 페이지는 공통 컴포넌트 + 해당 페이지 -->
   <template v-else>
     <Header />
-    <Title />
-    <CategorySection />
-    <Section2 />
-    <Section1 />
-    <Section3 />
-    <Footer /> 
+    <div class="page-content">
+          <Title />
+      <!-- <CategorySection /> -->
+      <Section2 />
+      <Section1 />
+      <Section3 />
+      <Footer /> 
+    </div>
+
 
     <!-- Aside -->
     <Aside />
@@ -67,6 +72,10 @@ const isFullScreen = computed(() =>
 
 
 <style scoped>
+.page-content {
+  padding-top: 140px; /* 헤더 높이만큼 */
+  padding-bottom: 170px;
+}
 
 .fade-enter-active,
 .fade-leave-active {

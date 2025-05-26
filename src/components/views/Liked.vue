@@ -36,7 +36,7 @@ const { likedProducts, toggleLike } = useProducts()
 
 .like h2 {
   text-align: center;
-  font-size: 24px;
+  font-size: 27px;
   font-weight: bold;
   margin-bottom: 30px;
 }

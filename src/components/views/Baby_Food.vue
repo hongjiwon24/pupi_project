@@ -1,8 +1,8 @@
 <!-- Baby Food 제품 페이지 -->
 
 <template>
-  <div class="baby_food wrap flex-column-center">
-    <h2 class="h2">Baby Food</h2>
+  <div class="baby_food wrap flex-column">
+    <h2 class="h3">Baby Food</h2>
     <ul class="product-list">
       <li v-for="(item, index) in visibleProducts" :key="item.name">
         <router-link :to="`/product/${item.id}`">
@@ -46,9 +46,10 @@ const showMore = () => {
 
 <style scoped>
 .baby_food {
-  min-height: 700px;
-  margin-bottom: 90px;
+  /* min-height: 700px; */
   margin-top: 70px;
+  align-items: center;
+  gap: 30px;
 }
 .baby_food h2 {
 

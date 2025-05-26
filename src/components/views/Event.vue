@@ -1,6 +1,6 @@
 <template>
   <div class="event-container flex">
-    <h1>🎉행운의 카드 뒤집기 이벤트🎊</h1>
+    <h1>행운의 카드 뒤집기 이벤트</h1>
     <p>카드를 한장 뒤집어주세요!</p>
     <div class="cards">
       <FlipCard
@@ -52,6 +52,7 @@ const flipped = ref(false)
 .event-container h1 {
   font-size: 27px;
   font-weight: bold;
+  color: #2f2929;
 }
 .cards {
   display: flex;
@@ -65,8 +66,6 @@ const flipped = ref(false)
   font-size: 1.2rem;
   font-weight: bold;
   color: #888;
-  position: absolute; /* 화면 고정 */
-  bottom: 8%; /* 하단에 고정 */
 }
 </style>
 

@@ -31,6 +31,7 @@ section {
 .section2 h2 {
     grid-column: 1;
     grid-row: 1;
+    color: #d1707a;
 }
 .section2 p {
     grid-column: 2;

@@ -49,7 +49,7 @@ section {
     /* background-color: #ccc; */
 }
 .section3 h2 {
-    margin-bottom: 24px;
+    color: #d1707a;
 }
 
 .product_d {
@@ -70,6 +70,7 @@ section {
     border: 1px solid #a0a0a0;
 }
 .product_d ul li p {
-    color: #5e5e5e;
+    color: #2f2929;
 }
+
 </style>

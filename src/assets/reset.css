@@ -16,7 +16,8 @@ ul{
 }
 a{
   text-decoration: none;
-  color: #000 !important;
+  /* color: #000 !important; */
+  color: #d1707a;
 }
 address{
   font-style: normal;

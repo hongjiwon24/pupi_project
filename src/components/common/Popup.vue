@@ -64,6 +64,8 @@ const disableTodayPopup = () => {
 .random-card { /* 카드 이미지 */
   width: 105px;
   margin: 30px;
+  border: 2px solid #764f41;
+  border-radius: 5px;
 }
 .popup-content h2 { /* 랜덤 카드 뽑기 이벤트 */
   font-size: 24px;

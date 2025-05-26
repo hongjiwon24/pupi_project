@@ -1,8 +1,8 @@
 <template>
     <div class="aside flex">
-        <router-link to="/goevent" class="balloon"><img src="@/assets/svg/balloon.svg" alt=""></router-link>
+        <!-- <router-link to="/goevent" class="balloon"><img src="@/assets/svg/balloon.svg" alt=""></router-link> -->
         <button class="asidebtn" @click="scrollToTop">TOP</button>
-        <router-link to="/liked" class="asidebtn favorit">찜</router-link>
+        <!-- <router-link to="/liked" class="asidebtn favorit">찜</router-link> -->
     </div>
 </template>
 
@@ -23,6 +23,7 @@ const scrollToTop = () => {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    z-index: 9999; /* Swiper보다 높게! */
 }
 
 /* 이벤트 풍선 */
@@ -47,7 +48,7 @@ const scrollToTop = () => {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    color: #919191;
+    color: #998888;
     font-size: 15px;
     font-weight: bold; 
 }

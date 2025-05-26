@@ -1,7 +1,8 @@
 <template>
-    <header class="flex">
+    <header :class="{ shadow: hasShadow }" class="flex">
         <span class="block"></span>
         <nav class="flex">
+            <!-- <img src="@/assets/img/logo.png" alt="logo"> -->
             <h1 class="h1"><router-link to="/">Pupi</router-link></h1>
             <ul class="flex">
                 <li><router-link to="/all">All</router-link></li>
@@ -21,18 +22,42 @@
     </header> 
 </template>
 
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const hasShadow = ref(false)
+
+function handleScroll() {
+  hasShadow.value = window.scrollY > 20
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+</script>
+
+
 
 <style scoped>
 header {
-    /* position: relative; */
-    width: 100%;
-    /* z-index: 2; */
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #FFF9F0;
-    /* top: 0; */
+  width: 100%;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #FFF9F0;
+  box-shadow: none;
+  position: fixed; /* ✔ 고정 아님 */
+  z-index: 3;
+  top: 0;
+  transition: 0.3s;
 }
+
+
 header span {
     width: 100%;
     height: 37px;
@@ -41,14 +66,27 @@ header span {
 header nav {
     width: 1440px;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px;
+    align-items: last baseline;
+    padding: 10px 0 20px 0;
 }
 header nav h1 {
-  
+    display: flex;
+    align-items: center;
+    font-family: 'KCC-Ganpan';
+    transform: translateY(2px);
+}
+header nav h1::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 48px;
+    background-image: url(@/assets/img/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 3px;
 }
 header nav h1 a {
-    color: #d1707a !important;
+    transition: 0.7s;
 }
 header nav ul {
     gap: 45px;
@@ -58,11 +96,14 @@ header nav ul li {
 }
 header nav ul li a {
     font-weight: bold;
+    color: #2f2929 !important;
+    font-size: 17px;
 }
 
 .nav-links {
     display: flex;
-    gap: 18px;
+    gap: 20px;
+    transform: translateY(4px);
 }
 
 .nav-item {
@@ -72,24 +113,38 @@ header nav ul li a {
 .nav-item::before {
     content: "";
     display: inline-block;
-    width: 25px;
-    height: 25px;
+    width: 26px;
+    height: 26px;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 .nav-item.liked::before {
-    width: 31px;
-    height: 31px;
+    width: 33px;
+    height: 33px;
     background-image: url('@/assets/svg/favorite.svg');
     transform: translateY(-2px);
 }
 .nav-item.cart::before {
-    width: 26px;
-    height: 26px;
+    width: 27px;
+    height: 27px;
     background-image: url('@/assets/svg/shopping_cart.svg');
 }
 .nav-item.login::before {
     background-image: url('@/assets/svg/person.svg');
+}
+</style>
+
+<style>
+header.shadow {
+  position: fixed;     /* ✔ 스크롤 내리면 고정됨 */
+  top: 0;
+  left: 0;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+header.shadow h1 a {
+  color: #f1b7bd;
+  transition: 0.7s;
 }
 </style>
