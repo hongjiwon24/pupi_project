@@ -72,18 +72,18 @@ const router = createRouter({
 });
 
 
-router.beforeEach((to, from, next) => {
-  const fullScreenRoutes = ['/event', '/goevent']; // 전체화면으로 보여줄 라우트 목록
+// router.beforeEach((to, from, next) => {
+//   const fullScreenRoutes = ['/event', '/goevent']; // 전체화면으로 보여줄 라우트 목록
   
-  if (fullScreenRoutes.includes(to.path)) {
-    document.body.classList.add('fullscreen'); // 전체화면 라우트일 경우 body에 클래스 추가
-  } else {
-    document.body.classList.remove('fullscreen'); // 그 외 라우트에선 클래스 제거
-  }
+//   if (fullScreenRoutes.includes(to.path)) {
+//     document.body.classList.add('fullscreen'); // 전체화면 라우트일 경우 body에 클래스 추가
+//   } else {
+//     document.body.classList.remove('fullscreen'); // 그 외 라우트에선 클래스 제거
+//   }
 
-  next(); // 반드시 호출해야 다음 라우터로 넘어감
+//   next(); // 반드시 호출해야 다음 라우터로 넘어감
   
-});
+// });
 
 
 export default router

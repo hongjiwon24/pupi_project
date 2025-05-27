@@ -67,7 +67,7 @@ header nav {
     width: 1440px;
     justify-content: space-between;
     align-items: last baseline;
-    padding: 10px 0 20px 0;
+    padding: 10px 0 0 0;
 }
 header nav h1 {
     display: flex;
@@ -95,9 +95,29 @@ header nav ul li {
   
 }
 header nav ul li a {
-    font-weight: bold;
-    color: #2f2929 !important;
-    font-size: 17px;
+  position: relative;
+  font-weight: bold;
+  color: #2f2929 !important;
+  font-size: 17px;
+  display: inline-block;
+  padding-bottom: 28px;
+  transition: color 0.3s ease;
+}
+/* 밑줄 효과 */
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 7px;
+  background-color: #c8f1e5;
+  transition: width 0.3s ease;
+}
+
+/* 마우스 올렸을 때 */
+header nav ul li a:hover::after {
+  width: 100%;
 }
 
 .nav-links {

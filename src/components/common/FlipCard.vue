@@ -109,7 +109,7 @@ onMounted(() => {
 }
 
 .card-back {
-  background-color: #ffe600;
+  background-color: #fde2db;
   transform: rotateY(180deg);
   font-weight: bold;
 }

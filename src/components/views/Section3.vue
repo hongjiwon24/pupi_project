@@ -50,6 +50,7 @@ section {
 }
 .section3 h2 {
     color: #d1707a;
+    margin-bottom: 33px;
 }
 
 .product_d {
@@ -71,6 +72,33 @@ section {
 }
 .product_d ul li p {
     color: #2f2929;
+}
+.product_d ul li:nth-child(1)::after,
+.product_d ul li:nth-child(2)::after,
+.product_d ul li:nth-child(3)::after  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 44px;
+    height: 50px;
+    content: '';
+    background-image: url('@/assets/svg/ribbon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    line-height: 44px;
+}
+.product_d ul li:nth-child(1)::after {
+    content: '1';
+}
+.product_d ul li:nth-child(2)::after {
+    content: '2';
+}
+.product_d ul li:nth-child(3)::after {
+    content: '3';
 }
 
 </style>

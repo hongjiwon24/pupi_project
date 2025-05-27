@@ -29,7 +29,7 @@
 
         <div class="signup-link">
           아직 아이디가 없으신가요?
-          <router-link to="/signup" class="link">회원가입</router-link>
+          <router-link to="/not_found" class="link">회원가입</router-link>
         </div>
       </form>
     </div>

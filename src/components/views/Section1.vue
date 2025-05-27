@@ -16,9 +16,10 @@
              @mousemove="updateMouse">
           
           <!-- ✅ Drag 커서 위치 이동 -->
+          <!-- v-show 대신 class로 제어 -->
           <div
-            v-if="isDragging && !isInteractive"
             class="drag-cursor"
+            :class="{ visible: isDragging && !isInteractive }"
             :style="cursorStyle"
           >
             좌우로 드래그 해보세요
@@ -264,10 +265,17 @@ const cursorStyle = computed(() => ({
     border-radius: 20px;
     pointer-events: none;
     z-index: 9999;
-    animation: wiggle 0.8s infinite ease-in-out;
-    transform: translate(0, 0);
     white-space: nowrap;
     user-select: none;
+
+    /* opacity 초기값 및 전환 */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  /* 조건부 클래스로 보여질 때만 fade-in */
+  .drag-cursor.visible {
+    opacity: 1;
   }
 }
 

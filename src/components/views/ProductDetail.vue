@@ -120,6 +120,7 @@ function toggleLikeById(id) {
     width: 608px;
     height: 388px;
     object-fit: cover;
+    border: 1px solid #a0a0a0;
 }
 .product-meta {
   display: flex;
@@ -136,16 +137,23 @@ function toggleLikeById(id) {
 .product-meta .description {
   padding-bottom: 15px;
 }
+
+.relation h3 {
+  font-size: 18px;
+}
 .related {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    /* display: grid;
+    grid-template-columns: repeat(5, 1fr); */
+    display: flex;
+    justify-content: space-between;
     gap: 20px;
-    margin-top: 40px;
+    margin-top: 22px;
 }
 .related img {
-    width: 100%;
-    height: 180px;
+    width: 197px;
+    height: 197px;
     object-fit: cover;
+    border: 1px solid #a0a0a0;
 }
 .related img:hover {
     object-fit: cover;
