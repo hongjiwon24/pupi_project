@@ -80,7 +80,7 @@ header nav h1::before {
     display: block;
     width: 50px;
     height: 48px;
-    background-image: url(@/assets/img/logo.png);
+    background-image: url(@/assets/svg/logo.svg);
     background-repeat: no-repeat;
     background-size: contain;
     margin-right: 3px;
