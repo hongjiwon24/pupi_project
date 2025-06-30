@@ -60,7 +60,7 @@ const routes = [
 
 
 const router = createRouter({
-  history: createWebHistory('/pupi/'), // 브라우저 히스토리 API 사용 (주소에 # 없이 작동)
+  history: createWebHistory(), // 브라우저 히스토리 API 사용 (주소에 # 없이 작동)
   routes, // 미리 정의한 라우트 목록을 등록
   scrollBehavior(to, from, savedPosition) { // 페이지 전환 시 항상 맨 위로 이동
     if (savedPosition) {
